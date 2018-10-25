@@ -33,7 +33,12 @@
     <div class="form__group">
       <input type="text" placeholder="Username" name="username" id="requiredUser" class="form__input" autocomplete="off" />
     </div>
-
+    <div class="form__group">
+      <input type="text" placeholder="Name" name="firstname" id="requiredUser" class="form__input" autocomplete="off" />
+    </div>
+    <div class="form__group">
+      <input type="text" placeholder="Last Name" name="lastname" id="requiredUser" class="form__input" autocomplete="off" />
+    </div>
     <div class="form__group">
       <input type="email" placeholder="Email" name="email" id="requiredEmail" class="form__input" autocomplete="off" />
     </div>
