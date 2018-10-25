@@ -29,7 +29,7 @@
   <button class="btn" id="enterRegister" type="submit">Register</button>
   <button class="btn" id="enterLogin"  type="button">Login</button>
 
-  <form id="registerForm" class="form" action="registerServlet" method="post" style="display: none">
+  <form id="registerForm" class="form" action="RegisterServlet" method="post" style="display: none">
     <div class="form__group">
       <input type="text" placeholder="Username" name="username" class="form__input" autocomplete="off" />
     </div>
@@ -51,7 +51,7 @@
     <button class="btn" id="loginSide"  type="button">Login Side</button>
   </form>
   <!-- Login Page -->
-  <form id="loginForm" class="form" action="loginServlet" method="post" style="display: none">
+  <form id="loginForm" class="form" action="LoginServlet" method="post" style="display: none">
     <div class="form__group">
       <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" />
     </div>
