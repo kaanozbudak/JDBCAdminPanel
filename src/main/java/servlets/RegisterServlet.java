@@ -1,6 +1,7 @@
 package servlets;
 
-import handler.*;
+import handler.Database;
+import handler.User;
 
 import java.io.IOException;
 
@@ -16,6 +17,8 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
         String password = request.getParameter("password");
         User user = new User(firstName,lastName,userName,email,password);
         System.out.println(firstName + "/" + lastName + "/" + userName + "/" + email + "/" + password);
+
+        database.registerUser(user);
 
     }
 

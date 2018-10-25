@@ -31,7 +31,7 @@
 
   <form id="registerForm" class="form" action="RegisterServlet" method="post" style="display: none">
     <div class="form__group">
-      <input type="text" placeholder="Username" name="username" class="form__input" autocomplete="off" />
+      <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" />
     </div>
     <div class="form__group">
       <input type="text" placeholder="Name" name="firstName" class="form__input" autocomplete="off" />
