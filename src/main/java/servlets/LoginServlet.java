@@ -21,7 +21,6 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
 
         if(database.loginCheck(user))
         {
-
             url = "user_page.jsp";
         }
         else

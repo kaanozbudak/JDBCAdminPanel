@@ -34,10 +34,10 @@
       <input type="text" placeholder="Username" name="username" class="form__input" autocomplete="off" />
     </div>
     <div class="form__group">
-      <input type="text" placeholder="Name" name="firstname" class="form__input" autocomplete="off" />
+      <input type="text" placeholder="Name" name="firstName" class="form__input" autocomplete="off" />
     </div>
     <div class="form__group">
-      <input type="text" placeholder="Last Name" name="lastname" class="form__input" autocomplete="off" />
+      <input type="text" placeholder="Last Name" name="lastName" class="form__input" autocomplete="off" />
     </div>
     <div class="form__group">
       <input type="email" placeholder="Email" name="email" class="form__input" autocomplete="off" />
@@ -53,10 +53,10 @@
   <!-- Login Page -->
   <form id="loginForm" class="form" action="loginServlet" method="post" style="display: none">
     <div class="form__group">
-      <input type="text" placeholder="Username" name="username" class="form__input" autocomplete="off" />
+      <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" />
     </div>
     <div class="form__group">
-      <input type="password" placeholder="Password" name="pass" class="form__input" autocomplete="off" />
+      <input type="password" placeholder="Password" name="password" class="form__input" autocomplete="off" />
     </div>
 
     <button class="btn" type="submit">Login</button>
