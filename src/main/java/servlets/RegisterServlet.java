@@ -1,4 +1,6 @@
 package servlets;
+import handler.User;
+import handler.Database;
 
 import java.io.IOException;
 

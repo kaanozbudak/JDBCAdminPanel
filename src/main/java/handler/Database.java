@@ -48,7 +48,7 @@ public class Database
         }
         return false;
     }
-    public boolean registerCheck(String email, String userName)
+    private boolean registerCheck(String email, String userName)
     {
         try
         {
