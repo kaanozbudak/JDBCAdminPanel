@@ -8,6 +8,18 @@ public class Database
     private Statement statement;
     private ResultSet resultSet;
 
+    /*
+            create database  if not exists user_db;
+            use user_db;
+            create table if not exists user_table(
+										user_id int not null auto_increment primary key,
+										user_firstname varchar(20),
+                                        user_lastname varchar(20),
+										user_username varchar(20),
+										user_email varchar(20),
+                                        user_password varchar(20));
+            select * from user_table;
+     */
     public void startConnection()
     {
         String javaDriver = "com.mysql.jdbc.Driver";

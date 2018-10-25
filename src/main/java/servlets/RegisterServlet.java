@@ -17,9 +17,6 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
         User user = new User(firstName,lastName,userName,email,password);
         System.out.println(firstName + "/" + lastName + "/" + userName + "/" + email + "/" + password);
 
-
-
-
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {

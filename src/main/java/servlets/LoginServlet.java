@@ -1,16 +1,19 @@
 package servlets;
 
-import handler.*;
+import handler.Database;
+import handler.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
+
 public class LoginServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
-        String url = "";
+        String url = "/";
         Database database = new Database();
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
@@ -19,12 +22,12 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
 
         if(database.loginCheck(user)) // sent user to database and check is exists or not
         {
-            url = "user_page.jsp";
+            url = "/user_page.jsp";
             // true username and password, success login
         }
         else
         {
-            url = "";
+            url = "/";
             // wrong username or password, give pop up to screen
         }
 
