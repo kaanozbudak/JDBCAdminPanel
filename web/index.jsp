@@ -8,8 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="dynamicJS.js"></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script src="index.js"></script>
   <script src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
   <script>
       document.getElementById("requiredUser").addEventListener("click", function(){
