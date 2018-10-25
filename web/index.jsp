@@ -7,10 +7,57 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="dynamicJS.js"></script>
+  <script src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
+  <script>
+      document.getElementById("requiredUser").addEventListener("click", function(){
+          document.getElementById("requiredUser").autofocus;
+      });
+  </script>
+</head>
+<body>
+
+<div class="user">
+  <header class="user__header">
+    <img src="" alt="" />
+  </header>
+  <!-- Register Page -->
+
+
+  <button class="btn" id="enterRegister" type="submit">Register</button>
+  <button class="btn" id="enterLogin"  type="button">Login</button>
+
+  <form id="registerForm" class="form" action="registerServlet" method="post" style="display: none">
+    <div class="form__group">
+      <input type="text" placeholder="Username" name="username" id="requiredUser" class="form__input" autocomplete="off" />
+    </div>
+
+    <div class="form__group">
+      <input type="email" placeholder="Email" name="email" id="requiredEmail" class="form__input" autocomplete="off" />
+    </div>
+
+    <div class="form__group">
+      <input type="password" placeholder="Password" name="pass" id="requiredPass" class="form__input" autocomplete="off" />
+    </div>
+
+    <button class="btn" id="submit" type="submit">Register</button>
+    <button class="btn" id="loginSide"  type="button">Login Side</button>
+  </form>
+  <!-- Login Page -->
+  <form id="loginForm" class="form" action="loginServlet" method="post" style="display: none">
+    <div class="form__group">
+      <input type="text" placeholder="Username" name="username" class="form__input" autocomplete="off" />
+    </div>
+    <div class="form__group">
+      <input type="password" placeholder="Password" name="pass" class="form__input" autocomplete="off" />
+    </div>
+
+    <button class="btn" type="submit">Login</button>
+    <button class="btn" id="registerSide" type="button">Register Side</button>
+  </form>
+
+</div>
+</body>
 </html>
