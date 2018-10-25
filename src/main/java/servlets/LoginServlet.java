@@ -13,19 +13,20 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
 
         String url = "";
         Database database = new Database();
-        User user = new User(request.getParameter("firstname")
-                , request.getParameter("lastname")
-                , request.getParameter("username")
-                , request.getParameter("email")
-                , request.getParameter("password"));
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("password");
+        User user = new User(userName,password);
+        System.out.println(userName + "/" + password);
 
-        if(database.loginCheck(user))
+        if(database.loginCheck(user)) // sent user to database and check is exists or not
         {
             url = "user_page.jsp";
+            // true username and password, success login
         }
         else
         {
             url = "";
+            // wrong username or password, give pop up to screen
         }
 
 
