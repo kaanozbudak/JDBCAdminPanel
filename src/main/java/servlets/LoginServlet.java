@@ -20,14 +20,14 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         User user = new User(userName,password);
         System.out.println(userName + "/" + password);
 
-        if(database.loginCheck(user)) // sent user to database and check is exists or not
+        if(database.loginCheck(user)) // sent user to database and check is already exists or not
         {
             url = "/user_page.jsp";
             // true username and password, success login
         }
         else
         {
-            url = "/";
+            url = "/kaan.jsp";
             // wrong username or password, give pop up to screen
         }
 

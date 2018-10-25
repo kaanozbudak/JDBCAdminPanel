@@ -31,20 +31,20 @@
 
   <form id="registerForm" class="form" action="RegisterServlet" method="post" style="display: none">
     <div class="form__group">
-      <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" />
+      <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" required />
     </div>
     <div class="form__group">
-      <input type="text" placeholder="Name" name="firstName" class="form__input" autocomplete="off" />
+      <input type="text" placeholder="Name" name="firstName" class="form__input" autocomplete="off" required />
     </div>
     <div class="form__group">
-      <input type="text" placeholder="Last Name" name="lastName" class="form__input" autocomplete="off" />
+      <input type="text" placeholder="Last Name" name="lastName" class="form__input" autocomplete="off" required />
     </div>
     <div class="form__group">
-      <input type="email" placeholder="Email" name="email" class="form__input" autocomplete="off" />
+      <input type="email" placeholder="Email" name="email" class="form__input" autocomplete="off" required />
     </div>
 
     <div class="form__group">
-      <input type="password" placeholder="Password" name="password" class="form__input" autocomplete="off" />
+      <input type="password" placeholder="Password" name="password" class="form__input" autocomplete="off" required />
     </div>
 
     <button class="btn" id="submit" type="submit">Register</button>
@@ -53,10 +53,10 @@
   <!-- Login Page -->
   <form id="loginForm" class="form" action="LoginServlet" method="post" style="display: none">
     <div class="form__group">
-      <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" />
+      <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" required/>
     </div>
     <div class="form__group">
-      <input type="password" placeholder="Password" name="password" class="form__input" autocomplete="off" />
+      <input type="password" placeholder="Password" name="password" class="form__input" autocomplete="off" required />
     </div>
 
     <button class="btn" type="submit">Login</button>

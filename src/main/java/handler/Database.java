@@ -22,7 +22,7 @@ public class Database
      */
     public void startConnection()
     {
-        String javaDriver = "com.mysql.jdbc.Driver";
+        String javaDriver = "com.mysql.cj.jdbc.Driver";
         String jdbcURL= "jdbc:mysql://localhost:3306/user_db";
         String root = "root";
         String myPassword="rosekaan1";
@@ -42,7 +42,8 @@ public class Database
         try
         {
             startConnection();
-            String loginCheckSql = String.format("Select * from user_table where email='%s' and password='%s';",user.getEmail(),user.getPassword());
+
+            String loginCheckSql = String.format("Select * from user_table where user_email='%s' and user_password='%s';",user.getEmail(),user.getPassword());
             statement = connection.createStatement();
             resultSet = statement.executeQuery(loginCheckSql);
             return resultSet.next();
@@ -55,10 +56,6 @@ public class Database
             System.out.println("check user failed: "+e.getLocalizedMessage());
 
         }
-        finally
-        {
-            close();
-        }
         return false;
     }
     private boolean registerCheck(String email, String userName)
@@ -66,7 +63,7 @@ public class Database
         try
         {
             startConnection();
-            String registerCheckSql =String.format("select * from user_table where email='%s' or username='%s';",email,userName);
+            String registerCheckSql =String.format("select * from user_table where user_email='%s' or user_username='%s';",email,userName);
             statement = connection.createStatement();
             resultSet = statement.executeQuery(registerCheckSql);
             return resultSet.next();
@@ -102,10 +99,6 @@ public class Database
             catch (SQLException e)
             {
                 System.out.println("register user failed : " + e.getLocalizedMessage());
-            }
-            finally
-            {
-                close();
             }
         }
     }
