@@ -5,10 +5,10 @@
          version="4.0">
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>servletpackage.LoginServlet</servlet-class>
+        <servlet-class>servlets.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>servletpackage.RegisterServlet</servlet-class>
+        <servlet-class>servlets.RegisterServlet</servlet-class>
     </servlet>
 </web-app>
