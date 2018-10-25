@@ -26,6 +26,7 @@ public class Database
         String jdbcURL= "jdbc:mysql://localhost:3306/user_db";
         String root = "root";
         String myPassword="rosekaan1";
+        // my database password
         try
         {
             Class.forName(javaDriver);
