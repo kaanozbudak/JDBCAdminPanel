@@ -13,11 +13,11 @@ public class Database
             use user_db;
             create table if not exists user_table(
 										user_id int not null auto_increment primary key,
-										user_firstname varchar(20),
-                                        user_lastname varchar(20),
-										user_username varchar(20),
-										user_email varchar(20),
-                                        user_password varchar(20));
+										user_firstname varchar(50),
+                                        user_lastname varchar(50),
+										user_username varchar(50),
+										user_email varchar(50),
+                                        user_password varchar(50));
             select * from user_table;
      */
     public void startConnection()
@@ -25,7 +25,7 @@ public class Database
         String javaDriver = "com.mysql.cj.jdbc.Driver";
         String jdbcURL= "jdbc:mysql://localhost:3306/user_db";
         String root = "root";
-        String myPassword="";
+        String myPassword="rosekaan1";
         // my database password
         try
         {
@@ -88,9 +88,9 @@ public class Database
             try
             {
                 String registerUserSql = String.format("INSERT INTO user_table values (default,'%s','%s','%s','%s','%s');"
-                        ,user.getUserName()
                         ,user.getFirstName()
                         ,user.getLastName()
+                        ,user.getUserName()
                         ,user.getEmail()
                         ,user.getPassword());
                 statement = connection.createStatement();
