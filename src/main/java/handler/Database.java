@@ -25,7 +25,7 @@ public class Database
         String javaDriver = "com.mysql.cj.jdbc.Driver";
         String jdbcURL= "jdbc:mysql://localhost:3306/user_db";
         String root = "root";
-        String myPassword="rosekaan1";
+        String myPassword="";
         // my database password
         try
         {
@@ -43,7 +43,7 @@ public class Database
         {
             startConnection();
 
-            String loginCheckSql = String.format("Select * from user_table where user_email='%s' and user_password='%s';",user.getEmail(),user.getPassword());
+            String loginCheckSql = String.format("Select * from user_table where user_username='%s' and user_password='%s';",user.getUserName(),user.getPassword());
             statement = connection.createStatement();
             resultSet = statement.executeQuery(loginCheckSql);
             return resultSet.next();
