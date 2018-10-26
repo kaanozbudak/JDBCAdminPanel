@@ -27,7 +27,7 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         }
         else
         {
-            url = "/kaan.jsp";
+            url = "/errorPage.jsp";
             // wrong username or password, give pop up to screen
         }
 
