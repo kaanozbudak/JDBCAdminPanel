@@ -3,6 +3,7 @@ package servlets;
 import handler.Database;
 import handler.User;
 
+import javax.servlet.RequestDispatcher;
 import java.io.IOException;
 
 public class RegisterServlet extends javax.servlet.http.HttpServlet {
@@ -19,6 +20,16 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
         System.out.println(firstName + "/" + lastName + "/" + userName + "/" + email + "/" + password);
 
         database.registerUser(user);
+
+        if(database.registerCheck(email,userName)){
+            RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+            rd.forward(request, response);
+        }else{
+            RequestDispatcher rd = request.getRequestDispatcher("/errorRegister.jsp");
+            rd.forward(request, response);
+        }
+
+
 
     }
 

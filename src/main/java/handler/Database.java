@@ -25,7 +25,7 @@ public class Database
         String javaDriver = "com.mysql.cj.jdbc.Driver";
         String jdbcURL= "jdbc:mysql://localhost:3306/user_db";
         String root = "root";
-        String myPassword="rosekaan1";
+        String myPassword="";
         // my database password
         try
         {
@@ -58,7 +58,7 @@ public class Database
         }
         return false;
     }
-    private boolean registerCheck(String email, String userName)
+    public boolean registerCheck(String email, String userName)
     {
         try
         {
@@ -79,6 +79,7 @@ public class Database
     }
     public void registerUser(User user)
     {
+
         if (registerCheck(user.getEmail(),user.getUserName()))
         {
             System.out.println("This user already registered");

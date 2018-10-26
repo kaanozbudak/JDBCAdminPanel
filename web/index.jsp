@@ -21,9 +21,6 @@
   <!-- Register Page -->
 
 
-  <button class="btn" id="enterRegister" type="submit">Register</button>
-  <button class="btn" id="enterLogin"  type="button">Login</button>
-
   <form id="registerForm" class="form" action="RegisterServlet" method="post" style="display: none">
     <div class="form__group">
       <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" required />
@@ -41,21 +38,20 @@
     <div class="form__group">
       <input type="password" placeholder="Password" name="password" class="form__input" autocomplete="off" required />
     </div>
-
     <button class="btn" id="submit" type="submit">Register</button>
-    <button class="btn" id="loginSide"  type="button">Login Side</button>
+    <button class="btn" id="loginSide"  type="button">Login</button>
   </form>
   <!-- Login Page -->
-  <form id="loginForm" class="form" action="LoginServlet" method="post" style="display: none">
+  <form id="loginForm" class="form" action="LoginServlet" method="post" style="display: block">
     <div class="form__group">
-      <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" required/>
+      <input type="text" placeholder="Username" name="userName" class="form__input" required/>
     </div>
     <div class="form__group">
-      <input type="password" placeholder="Password" name="password" class="form__input" autocomplete="off" required />
+      <input type="password" placeholder="Password" name="password" class="form__input" required />
     </div>
 
     <button class="btn" type="submit">Login</button>
-    <button class="btn" id="registerSide" type="button">Register Side</button>
+    <button class="btn" id="registerSide" type="button">Register</button>
   </form>
 
 </div>

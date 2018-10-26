@@ -106,7 +106,7 @@ body {
     font-size: 18px;
 }
 .btn:hover {
-    background: silver;
+    background: goldenrod;
 }
 @-webkit-keyframes NO {
     from, to {
