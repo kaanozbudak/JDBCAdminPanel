@@ -22,7 +22,7 @@ public class Database
      */
     public void startConnection()
     {
-        String javaDriver = "com.mysql.cj.jdbc.Driver";
+        String javaDriver = "com.mysql.jdbc.Driver";
         String jdbcURL= "jdbc:mysql://localhost:3306/user_db";
         String root = "root";
         String myPassword="";
