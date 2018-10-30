@@ -19,17 +19,20 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
         User user = new User(firstName,lastName,userName,email,password);
         System.out.println(firstName + "/" + lastName + "/" + userName + "/" + email + "/" + password);
 
-        database.registerUser(user);
+        if(database.registerCheck(email,userName))
+        {
+            // if register check return true that means that user already exists
+            url = "/errorRegister.jsp";
+        }
+        else
+        {
 
-        if(database.registerCheck(email,userName)){
-            RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
-            rd.forward(request, response);
-        }else{
-            RequestDispatcher rd = request.getRequestDispatcher("/errorRegister.jsp");
-            rd.forward(request, response);
+            database.registerUser(user);
+            url = "/index.jsp";
         }
 
-
+        RequestDispatcher rd = request.getRequestDispatcher(url);
+        rd.forward(request, response);
 
     }
 
