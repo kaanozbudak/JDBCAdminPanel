@@ -20,9 +20,9 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         User user = new User(userName,password);
         System.out.println(userName + "/" + password);
         database.startConnection();
-        if(database.loginCheck(user)) // sent user to database and check is already exists or not
+        if(database.loginCheck(userName, password)) // sent user to database and check is already exists or not
         {
-            url = "/user_page.jsp";
+            url = "/userPage.jsp";
             // true username and password, success login
         }
         else

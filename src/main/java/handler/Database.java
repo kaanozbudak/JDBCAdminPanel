@@ -37,13 +37,13 @@ public class Database
             System.out.println("connection failed: " + e.getLocalizedMessage());
         }
     }
-    public boolean loginCheck(User user)
+    public boolean loginCheck(String userName, String password)
     {
         try
         {
             startConnection();
 
-            String loginCheckSql = String.format("Select * from user_table where user_username='%s' and user_password='%s';",user.getUserName(),user.getPassword());
+            String loginCheckSql = String.format("Select * from user_table where user_username='%s' and user_password='%s';",userName, password);
             statement = connection.createStatement();
             resultSet = statement.executeQuery(loginCheckSql);
             return resultSet.next();
