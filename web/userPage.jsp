@@ -26,14 +26,6 @@
     <div>
         <button style="width: 250px; margin-left: 25px;" type="button" class="btn btn-light">test</button>
     </div>
-    <br>
-    <div>
-        <button style="width: 250px; margin-left: 25px;" type="button" class="btn btn-light">test</button>
-    </div>
-    <br>
-    <div>
-        <button style="width: 250px; margin-left: 25px;" type="button" class="btn btn-light">test</button>
-    </div>
 </div>
 </body>
 <style>
@@ -48,9 +40,6 @@
         margin-left: 76%;
         margin-top: 3%;
         border-bottom-right-radius: 20px;
-    }
-    #logoutDiv:hover{
-        margin-left: 58%;
     }
     body{
         background-color: whitesmoke;
@@ -81,12 +70,14 @@
             height:1px;
             overflow:hidden;
             background:#ecf2f2;
+            overflow: hidden !important;
         }
         50%{
             width:300px;
-            height:1px;
+            height:300px;
             overflow:hidden;
             background:#ecf2f2;
+            overflow: hidden !important;
         }
         100%{
             height:600px;
@@ -94,6 +85,7 @@
             overflow:auto;
             background-image: -moz-linear-gradient(bottom, #05dec8 0%, #ecf2f2 100%);
             background-image: -webkit-linear-gradient(bottom, #05dec8 0%, #ecf2f2 100%);
+            overflow: hidden !important;
         }
     }
     @keyframes showcase{
@@ -102,12 +94,14 @@
             height:1px;
             overflow:hidden;
             background:#ecf2f2;
+            overflow: hidden !important;
         }
         50%{
             width:300px;
-            height:1px;
+            height:300px;
             overflow:hidden;
             background:#ecf2f2;
+            overflow: hidden !important;
         }
         100%{
             height:600px;
@@ -115,6 +109,7 @@
             overflow:auto;
             background-image: -moz-linear-gradient(bottom, #05dec8 0%, #ecf2f2 100%);
             background-image: -webkit-linear-gradient(bottom, #05dec8 0%, #ecf2f2 100%);
+            overflow: hidden !important;
         }
     }
 </style>
