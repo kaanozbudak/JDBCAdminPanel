@@ -10,9 +10,10 @@
     <script src="logoutJS.js"></script>
 </head>
 <body>
-<div id="logoutDiv" >Logout</div>
+
 
 <div id="container" aria-width="300" aria-height="600">
+    <div id="logoutDiv" >Logout</div>
     <div>
         <img src="/person.png" width="200" height="200" style="opacity:0.6; margin-left: 45px; margin-top: 10px;" alt="">
     </div>
@@ -44,8 +45,8 @@
         font-weight: bold;
         text-align: left;
         font-size: 14px;
-        margin-left: 56%;
-        margin-top: 9%;
+        margin-left: 76%;
+        margin-top: 3%;
         border-bottom-right-radius: 20px;
     }
     #logoutDiv:hover{
