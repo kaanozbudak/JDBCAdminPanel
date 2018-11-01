@@ -19,8 +19,6 @@
     <img src="" alt="" />
   </header>
   <!-- Register Page -->
-
-
   <form id="registerForm" class="form" action="RegisterServlet" method="post" style="display: none">
     <div class="form__group">
       <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" required />
