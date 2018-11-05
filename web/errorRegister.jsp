@@ -8,8 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/index.js"></script>
     <script src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
 </head>
 <body>

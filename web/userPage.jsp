@@ -7,14 +7,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="userPage.css">
-    <script src="userpageJs.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/userPage.css">
+    <script src="js/userpageJs.js"></script>
 </head>
 <body>
 
 <div class="user" "display: block;">
 <header class="user__header">
-    <img width="200px" height="220px" src="person.png" alt="" />
+    <img width="200px" height="220px" src="img/person.png" alt="" />
 </header>
 <!-- Menu Page -->
 <form class="form" >
