@@ -22,7 +22,7 @@ public class Database
      */
     public void startConnection()
     {
-        String javaDriver = "com.mysql.jdbc.Driver";
+        String javaDriver = "com.mysql.cj.jdbc.Driver";
         String jdbcURL= "jdbc:mysql://localhost:3306/user_db";
         String root = "root";
         String myPassword="";
@@ -37,12 +37,48 @@ public class Database
             System.out.println("connection failed: " + e.getLocalizedMessage());
         }
     }
-    public boolean loginCheck(String userName, String password)
+    public void updatePassword(String userName, String password)
     {
         try
         {
             startConnection();
 
+            String updatePassword = String.format("update user_table set user_password='%s' where user_username='%s';",password,userName);
+            statement = connection.createStatement();
+            statement.executeUpdate(updatePassword);
+            System.out.println("update password success");
+        }
+        catch (Exception e)
+        {
+            System.out.println("update password failed: " + e.getMessage() + "/" + e.getLocalizedMessage());
+        }
+        close();
+    }
+    public boolean checkUser(String userName)
+    {
+        try
+        {
+            startConnection();
+            String checkUserSql = String.format("select * from user_table where user_username='%s';",userName);
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(checkUserSql);
+
+            return resultSet.next();
+            // if there is an user like that it returns true
+            // if there is not it returns false
+        }
+        catch (Exception e)
+        {
+            System.out.println("check user failed: " + e.getLocalizedMessage() + "/" + e.getMessage());
+        }
+        close();
+        return false;
+    }
+    public boolean loginCheck(String userName, String password)
+    {
+        try
+        {
+            startConnection();
             String loginCheckSql = String.format("Select * from user_table where user_username='%s' and user_password='%s';",userName, password);
             statement = connection.createStatement();
             resultSet = statement.executeQuery(loginCheckSql);
@@ -54,8 +90,8 @@ public class Database
         catch( Exception e )
         {
             System.out.println("check user failed: "+e.getLocalizedMessage());
-
         }
+        close();
         return false;
     }
     public boolean registerCheck(String email, String userName)
@@ -63,7 +99,7 @@ public class Database
         try
         {
             startConnection();
-            String registerCheckSql =String.format("select * from user_table where user_email='%s' or user_username='%s';",email,userName);
+            String registerCheckSql =String.format("select * from user_table where user_email='%s' or user_username='%s';",email, userName);
             statement = connection.createStatement();
             resultSet = statement.executeQuery(registerCheckSql);
             return resultSet.next();
@@ -96,11 +132,13 @@ public class Database
                         ,user.getPassword());
                 statement = connection.createStatement();
                 statement.executeUpdate(registerUserSql);
+                System.out.println("register user success");
             }
             catch (SQLException e)
             {
                 System.out.println("register user failed : " + e.getLocalizedMessage());
             }
+            close();
         }
     }
     private void close()

@@ -37,7 +37,7 @@
     <h1><a href="index.jsp">Log in !</a></h1>
     <br><br>
     <h2>Did you forget your password ? </h2>
-    <h3><a href="#">Reset Password !</a></h3>
+    <h3><a href="resetPassword.jsp">Reset Password !</a></h3>
 </div>
 </body>
 </html>

@@ -27,4 +27,12 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ResetServlet</servlet-name>
+        <servlet-class>servlets.ResetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResetServlet</servlet-name>
+        <url-pattern>/ResetServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
