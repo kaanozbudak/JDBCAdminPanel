@@ -13,33 +13,31 @@
     <script src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
 </head>
 <body>
-
+<%
+    String userName = request.getParameter("userName");
+    if (userName == null)
+    {
+        userName = "";
+    }
+    String email = request.getParameter("email");
+    if (email == null)
+    {
+        email = "";
+    }
+%>
 <div class="user">
     <header class="user__header">
         <img src="" alt="" />
     </header>
     <!-- Register Page -->
-    <h1> Have you register <a href="index.jsp">before?</a></h1>
-    <form id="registerForm" class="form" action="RegisterServlet" method="post" style="display: none">
-        <div class="form__group">
-            <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" required />
-        </div>
-        <div class="form__group">
-            <input type="text" placeholder="Name" name="firstName" class="form__input" autocomplete="off" required />
-        </div>
-        <div class="form__group">
-            <input type="text" placeholder="Last Name" name="lastName" class="form__input" autocomplete="off" required />
-        </div>
-        <div class="form__group">
-            <input type="email" placeholder="Email" name="email" class="form__input" autocomplete="off" required />
-        </div>
-
-        <div class="form__group">
-            <input type="password" placeholder="Password" name="password" class="form__input" autocomplete="off" required />
-        </div>
-        <button class="btn" id="submit" type="submit">Register</button>
-        <button class="btn" id="loginSide"  type="button">Login</button>
-    </form>
+    <h1> Have you register before ?</h1>
+    <h2> This username : <%=userName%></h2>
+    <h1>OR</h1>
+    <h2> This email: <%=email%> already exists !</h2>
+    <h1><a href="index.jsp">Log in !</a></h1>
+    <br><br>
+    <h2>Did you forget your password ? </h2>
+    <h3><a href="#">Reset Password !</a></h3>
 </div>
 </body>
 </html>

@@ -51,7 +51,6 @@
     <button class="btn" type="submit">Login</button>
     <button class="btn" id="registerSide" type="button">Register</button>
   </form>
-
 </div>
 </body>
 </html>

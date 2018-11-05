@@ -22,6 +22,7 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
         if(database.registerCheck(email,userName))
         {
             // if register check return true that means that user already exists
+
             url = "/errorRegister.jsp";
         }
         else
