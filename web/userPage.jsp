@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div class="user" "display: block;">
+<div class="user" style="display: block;">
 <header class="user__header">
     <img width="200px" height="220px" src="img/person.png" alt="" />
 </header>
@@ -32,7 +32,20 @@
     </header>
     <!-- Menu Page -->
     <form class="form" style="">
-        <div class="form__group">
+        <button style="margin-bottom: 1px;"class="btn" type="button">Update Password</button>
+        <button style="margin-bottom: 1px;"class="btn" type="button">Update Information</button>
+        <button id="themeButton" style="margin-bottom: 1px;"class="btn" type="button">Background Theme</button>
+        <button id="backButton" style="margin-bottom: 1px;"class="btn" type="button">Back</button>
+    </form>
+</div>
+
+<div class="user" style="display: none;">
+    <header class="user__header">
+    </header>
+    <form class="form" style="">
+        <button id="light" style="margin-bottom: 1px;"class="btn" type="button">Light</button>
+        <button id="dark" style="margin-bottom: 1px;"class="btn" type="button">Dark</button>
+        <button id="themeBackButton" style="margin-bottom: 1px;"class="btn" type="button">Back</button>
     </form>
 </div>
 
