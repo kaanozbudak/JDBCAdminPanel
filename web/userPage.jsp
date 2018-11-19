@@ -12,34 +12,49 @@
 </head>
 <body>
 
-<div class="user" style="display: block;">
-<header class="user__header">
-    <img width="200px" height="220px" src="img/person.png" alt="" />
-</header>
 <!-- Menu Page -->
-<form class="form" >
-
-    <button style="margin-bottom: 1px;"class="btn" type="button">Database Connect</button>
-    <button style="margin-bottom: 1px;"class="btn" type="button">Dash Board</button>
-    <button style="margin-bottom: 1px;"class="btn" type="button">User Settings</button>
-
-    <button class="btn" formaction="LogoutServlet" type="submit">Logout</button>
-</form>
-</div>
-
-<div class="user" style="display: none;">
+<div id="mainMenu" class="user" style="display: block;">
     <header class="user__header">
+        <img width="200px" height="220px" src="img/person.png" alt="" />
     </header>
-    <!-- Menu Page -->
-    <form class="form" style="">
-        <button style="margin-bottom: 1px;"class="btn" type="button">Update Password</button>
-        <button style="margin-bottom: 1px;"class="btn" type="button">Update Information</button>
-        <button id="themeButton" style="margin-bottom: 1px;"class="btn" type="button">Background Theme</button>
-        <button id="backButton" style="margin-bottom: 1px;"class="btn" type="button">Back</button>
+    <form  class="form" >
+        <button id="dbConnection" style="margin-bottom: 1px;"class="btn" type="button">Database Connect</button>
+        <button id="dashBoard" style="margin-bottom: 1px;"class="btn" type="button">DashBoard</button>
+        <button id="userSetting" style="margin-bottom: 1px;"class="btn" type="button">User Settings</button>
+        <button class="btn" formaction="LogoutServlet" type="submit">Logout</button>
     </form>
 </div>
 
-<div class="user" style="display: none;">
+<!-- UserSetting Page -->
+<div id="userSettingPage" class="user" style="display: none;">
+    <header class="user__header">
+    </header>
+    <form class="form" style="">
+        <button id="updatePassButton" style="margin-bottom: 1px;"class="btn" type="button">Update Password</button>
+        <button id="updateInfoButton" style="margin-bottom: 1px;"class="btn" type="button">Update Information</button>
+        <button id="themeButton" style="margin-bottom: 1px;"class="btn" type="button">Background Theme</button>
+        <button id="userSettingBackButton" style="margin-bottom: 1px;"class="btn" type="button">Back</button>
+    </form>
+</div>
+
+<!-- Reset Password -->
+<div id="resetPassPage" class="user" style="display: none;">
+    <header class="user__header">
+    </header>
+    <form id="registerForm" class="form" action="ResetServlet" method="post">
+        <div class="form__group">
+            <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" required />
+        </div>
+        <div class="form__group">
+            <input type="text" placeholder="Password" name="user_password" class="form__input" autocomplete="off" required />
+        </div>
+        <button class="btn" id="submit" type="submit">Reset Password</button>
+        <button id="resetPassBack" style="margin-bottom: 1px;"class="btn" type="button">Back</button>
+    </form>
+</div>
+<!-- Information -->
+<!-- Theme Page -->
+<div id="themePage" class="user" style="display: none;">
     <header class="user__header">
     </header>
     <form class="form" style="">
@@ -48,8 +63,6 @@
         <button id="themeBackButton" style="margin-bottom: 1px;"class="btn" type="button">Back</button>
     </form>
 </div>
-
-
 </body>
 </html>
 

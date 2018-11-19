@@ -30,7 +30,7 @@ body {
     -webkit-transform: translate3d(0, 500px, 0);
     transform: translate3d(0, 500px, 0);
     -webkit-animation: arrive 500ms ease-in-out 0.7s forwards;
-    animation: arrive 500ms ease-in-out 0.7s forwards;
+    animation: arrive 500ms ease-in-out 0.1s forwards;
 }
 
 .user__title {
@@ -47,8 +47,8 @@ body {
     opacity: 0;
     -webkit-transform: translate3d(0, 500px, 0);
     transform: translate3d(0, 500px, 0);
-    -webkit-animation: arrive 500ms ease-in-out 0.9s forwards;
-    animation: arrive 500ms ease-in-out 0.9s forwards;
+    -webkit-animation: arrive 500ms ease-in-out 0.1s forwards;
+    animation: arrive 500ms ease-in-out 0.1s forwards;
 }
 
 .form--no {
@@ -84,7 +84,7 @@ body {
     -webkit-appearance: none;
     border: 0;
     outline: 0;
-    transition: 0.3s;
+    transition: 0.1s;
     background: #ffffff;
     color:#808080;
     font-size: 18px;
@@ -102,7 +102,7 @@ body {
     border: 0;
     color: #808080;
     background: #ffffff;
-    transition: 0.3s;
+    transition: 0.1s;
     font-size: 18px;
 }
 .btn:hover {
