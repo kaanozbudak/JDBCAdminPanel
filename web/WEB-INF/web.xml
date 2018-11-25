@@ -38,4 +38,12 @@
     <listener>
         <listener-class>listener.CountListener</listener-class>
     </listener>
+    <filter>
+        <filter-name>ResponseTime</filter-name>
+        <filter-class>filters.ResponseTime</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ResponseTime</filter-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </filter-mapping>
 </web-app>

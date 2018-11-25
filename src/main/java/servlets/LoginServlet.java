@@ -1,5 +1,6 @@
 package servlets;
 
+import filters.ResponseTime;
 import handler.Database;
 import handler.User;
 
@@ -30,7 +31,6 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         {
             HttpSession session = request.getSession();
             System.out.println(session.getId());
-
             System.out.println(t);
             System.out.println(c);
 
@@ -47,7 +47,6 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         //RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher(url);
         //requestDispatcher.forward(request, response);
 }
-    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {}
 
-    }
 }
