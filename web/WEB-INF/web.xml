@@ -36,6 +36,6 @@
         <url-pattern>/ResetServlet</url-pattern>
     </servlet-mapping>
     <listener>
-        <listener-class>handler.CountListener</listener-class>
+        <listener-class>listener.CountListener</listener-class>
     </listener>
 </web-app>
