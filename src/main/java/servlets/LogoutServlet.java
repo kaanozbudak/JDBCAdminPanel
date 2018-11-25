@@ -14,8 +14,10 @@ public class LogoutServlet extends HttpServlet {
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
-        if(session != null)
+        if(session != null) {
             session.invalidate();
+            System.out.println(session.getId());
+        }
         request.getRequestDispatcher("/index.jsp").forward(request,response);
         System.out.println("Logout Successfully!");
     }
