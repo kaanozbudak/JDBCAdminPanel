@@ -45,5 +45,7 @@
     <filter-mapping>
         <filter-name>ResponseTime</filter-name>
         <url-pattern>/LoginServlet</url-pattern>
+        <url-pattern>/RegisterServlet</url-pattern>
+        <url-pattern>/LogoutServlet</url-pattern>
     </filter-mapping>
 </web-app>

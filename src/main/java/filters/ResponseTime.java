@@ -10,18 +10,16 @@ public class ResponseTime implements Filter {
     static int count=0;
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain fchain)throws IOException, ServletException{
 
-        HttpServletRequest rq = (HttpServletRequest) req;
-        String servletPath = rq.getServletPath();
-        System.out.println("#INFO " + new Date() + " - ServletPath :" + servletPath //
-                + ", URL =" + rq.getRequestURL());
+        long before = System.currentTimeMillis();
 
         fchain.doFilter(req,res);
-        //long before = System.currentTimeMillis();
 
-        //long after = System.currentTimeMillis();
+        long after = System.currentTimeMillis();
 
-        //long total = after-before;
+        long total = after-before;
 
-        //System.out.println(total);
+
+
+        System.out.println("Response Time is: "+total);
     }
 }
