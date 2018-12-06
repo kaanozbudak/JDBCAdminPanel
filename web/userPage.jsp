@@ -31,7 +31,7 @@
     <header class="user__header">
     </header>
     <form class="form" style="">
-        <button id="updatePassButton" style="margin-bottom: 1px;"class="btn" type="button">Update Password</button>
+        <button id="updatePassButton" style="margin-bottom: 1px;"class="btn" formaction="/index2.jsp" type="submit">Update Password</button>
         <button id="updateInfoButton" style="margin-bottom: 1px;"class="btn" type="button">Update Information</button>
         <button id="themeButton" style="margin-bottom: 1px;"class="btn" type="button">Background Theme</button>
         <button id="userSettingBackButton" style="margin-bottom: 1px;"class="btn" type="button">Back</button>
