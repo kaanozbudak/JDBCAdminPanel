@@ -35,4 +35,24 @@
         <servlet-name>ResetServlet</servlet-name>
         <url-pattern>/ResetServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>TheMainServlet</servlet-name>
+        <servlet-class>controller.TheMainServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/TheMainServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/databases</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/tables</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/rows</url-pattern>
+    </servlet-mapping>
 </web-app>
