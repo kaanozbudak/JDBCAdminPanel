@@ -28,9 +28,9 @@
         <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>ResetServlet</servlet-name>
-        <servlet-class>servlets.ResetServlet</servlet-class>
-    </servlet>
+    <servlet-name>ResetServlet</servlet-name>
+    <servlet-class>servlets.ResetServlet</servlet-class>
+</servlet>
     <servlet-mapping>
         <servlet-name>ResetServlet</servlet-name>
         <url-pattern>/ResetServlet</url-pattern>
@@ -55,4 +55,19 @@
         <servlet-name>TheMainServlet</servlet-name>
         <url-pattern>/rows</url-pattern>
     </servlet-mapping>
+
+    <listener>
+        <listener-class>listener.CountListener</listener-class>
+    </listener>
+    <filter>
+        <filter-name>ResponseTime</filter-name>
+        <filter-class>filters.ResponseTime</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ResponseTime</filter-name>
+        <url-pattern>/LoginServlet</url-pattern>
+        <url-pattern>/RegisterServlet</url-pattern>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </filter-mapping>
+
 </web-app>

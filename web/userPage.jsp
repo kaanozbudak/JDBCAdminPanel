@@ -9,6 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/userPage.css">
     <script src="js/userpageJs.js"></script>
+
 </head>
 <body>
 
@@ -62,6 +63,8 @@
         <button id="dark" style="margin-bottom: 1px;"class="btn" type="button">Dark</button>
         <button id="themeBackButton" style="margin-bottom: 1px;"class="btn" type="button">Back</button>
     </form>
+    </div>
+
 </div>
 </body>
 </html>
