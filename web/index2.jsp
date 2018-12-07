@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
+</head>
 <body>
 
-<h2>HTML Forms</h2>
-
-<form action="databases" method="post">
-  Server IP:<br>
-  <input type="text" name="serverIP" value="localhost">
-  <br>
-  Server ID:<br>
-  <input type="text" name="serverID" value="root">
-  <br>
-  Server Password:<br>
-  <input type="password" name="serverPassword" value="Ertugrul">
-  <br><br>
-  <input type="submit" value="Submit">
-</form> 
-
-<p></p>
+<form id="serverLogin" class="form" action="databases" method="post" style="
+    display: block; width: 400px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;">
+    <div class="form__group">
+        <input type="text" placeholder="Server IP" name="serverIP" value="localhost" class="form__input" required/>
+    </div>
+    <div class="form__group">
+        <input type="text" placeholder="Server ID" name="serverID" value="root" class="form__input" required/>
+    </div>
+    <div class="form__group">
+        <input type="password" placeholder="Server Password" name="serverPassword" value="" class="form__input"/>
+    </div>
+    <button class="btn" type="submit">Login</button>
+</form>
 
 </body>
 </html>

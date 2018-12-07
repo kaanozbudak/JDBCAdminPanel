@@ -26,7 +26,7 @@ public class Database
         String jdbcURL= "jdbc:mysql://localhost:3306/user_db";
         String root = "root";
         //String myPassword="rosekaan1";
-        String myPassword="p?Ga$?NcG;,t6at"; // if you need to create a war, change password
+        String myPassword=""; // if you need to create a war, change password-p?Ga$?NcG;,t6at
         try
         {
             Class.forName(javaDriver);
