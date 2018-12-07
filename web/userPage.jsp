@@ -19,7 +19,7 @@
         <img width="200px" height="220px" src="img/person.png" alt="" />
     </header>
     <form  class="form" >
-        <button id="dbConnection" style="margin-bottom: 1px;"class="btn" formaction="/index2.jsp" type="submit">Database Connect</button>
+        <button id="dbConnection" style="margin-bottom: 1px;"class="btn" formaction="index2.jsp" type="submit">Database Connect</button>
         <button id="dashBoard" style="margin-bottom: 1px;"class="btn" type="button">DashBoard</button>
         <button id="userSetting" style="margin-bottom: 1px;"class="btn" type="button">User Settings</button>
         <button class="btn" formaction="LogoutServlet" type="submit">Logout</button>
