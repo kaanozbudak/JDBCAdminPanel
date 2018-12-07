@@ -35,6 +35,10 @@
         padding-top: 15px;
 
     }
+    a{
+        text-decoration: none;
+        text-align: center;
+    }
 </style>
 <body>
 <%ArrayList<String> databases = (ArrayList<String>) session.getAttribute("databases");%>
@@ -44,6 +48,10 @@
         <div id="radioValues">
             <input class="values" onchange="buttonVis()" type="radio" name="databases" id="<%= databases.get(i)%>"
                    value="<%= databases.get(i)%>"><%= databases.get(i)%>
+
+            <input class="newValues" onchange="buttonVis()" type="radio" name="newDatabases" value="<%
+                request.getAttribute("dbName");
+            %>">
         </div>
 
         <br>
@@ -52,7 +60,7 @@
         <input class="btn" type="submit" value="Show Tables" id="button1" style="visibility:hidden">
     </form>
     <br>
-    <input class="btn" id="crtDB" value="Create new Database" type="submit" formaction="//yapilmadi daha">
+    <a class="btn" name="createDB" href="createDatabases.jsp">Create Database</a>
 
 </div>
 </body>

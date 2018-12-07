@@ -28,13 +28,23 @@
         <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
     <servlet>
-    <servlet-name>ResetServlet</servlet-name>
-    <servlet-class>servlets.ResetServlet</servlet-class>
-</servlet>
+        <servlet-name>ResetServlet</servlet-name>
+        <servlet-class>servlets.ResetServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ResetServlet</servlet-name>
         <url-pattern>/ResetServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateDatabase</servlet-name>
+        <servlet-class>data.CreateDatabase</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateDatabase</servlet-name>
+        <url-pattern>/createDatabase</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>TheMainServlet</servlet-name>
         <servlet-class>controller.TheMainServlet</servlet-class>

@@ -27,7 +27,6 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
         }
         else
         {
-
             database.registerUser(user);
             url = "/index.jsp";
         }
