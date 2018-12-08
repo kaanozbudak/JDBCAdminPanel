@@ -5,6 +5,12 @@
     <script src="js/index.js"></script>
     <script src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
 </head>
+<style>
+    a {
+        text-decoration: none;
+        text-align: center;
+    }
+</style>
 <body>
 
 <form id="serverLogin" class="form" action="databases" method="post" style="
@@ -23,6 +29,7 @@
         <input type="password" placeholder="Server Password" name="serverPassword" value="" class="form__input"/>
     </div>
     <button class="btn" type="submit">Login</button>
+    <a class="btn" href="userPage.jsp"> Back </a>
 </form>
 
 </body>

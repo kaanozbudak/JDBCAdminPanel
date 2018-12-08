@@ -9,9 +9,10 @@
     <script src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
 </head>
 <style>
-    body{
+    body {
         overflow: scroll !important;
     }
+
     #div {
         display: block;
         width: 30%;
@@ -26,46 +27,52 @@
         font-size: 18px;
         left: 0;
         right: 0;
-        margin-right: auto!important;
-        margin-left: auto!important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        padding: 2%;
         border-radius: 10px;
     }
-    #radioValues{
-        padding-left: 20px;
-        padding-top: 15px;
-
+    #radioValues {
+        margin-left: auto;
+        margin-right: auto;
     }
-    a{
+
+    a {
         text-decoration: none;
         text-align: center;
     }
 </style>
 <body>
-<%ArrayList<String> databases = (ArrayList<String>) session.getAttribute("databases");%>
+<%  String dbName = (String) session.getAttribute("dbName");
+    String elementDbName = (String) request.getAttribute("elementDbName");
+    ArrayList<String> databases = (ArrayList<String>) session.getAttribute("databases");
+    databases.add(dbName);
+    databases.remove(elementDbName);%>
 <div id="div">
     <form action="tables" method="post">
         <%for (int i = 0; i < databases.size(); i++) {%>
-        <div id="radioValues">
+        <hr style="border: 1px inset rgba(138,69,85,0.82);">
+        <div>
             <input class="values" onchange="buttonVis()" type="radio" name="databases" id="<%= databases.get(i)%>"
                    value="<%= databases.get(i)%>"><%= databases.get(i)%>
+            <%} %>
 
-            <input class="newValues" onchange="buttonVis()" type="radio" name="newDatabases" value="<%
-                request.getAttribute("dbName");
-            %>">
         </div>
-
-        <br>
-        <%} %>
         <br>
         <input class="btn" type="submit" value="Show Tables" id="button1" style="visibility:hidden">
+        <a class="btn" name="createDB" href="createDatabases.jsp" style="">Create Database</a>
+        <input class="btn" type="submit" value="Drop Database" formaction="dropDatabase" name="dropDB" >
+        <a class="btn" href="index2.jsp"> Back </a>
     </form>
     <br>
-    <a class="btn" name="createDB" href="createDatabases.jsp">Create Database</a>
+
+
 
 </div>
 </body>
 
 <script>
+
     function buttonVis() {
         document.getElementById("button1").style.visibility = "visible";
     }

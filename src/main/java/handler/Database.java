@@ -1,5 +1,6 @@
 package handler;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class Database {
@@ -46,14 +47,24 @@ public class Database {
         }
         close();
     }
-
+    public void dropDatabase(String elementDB){
+        try{
+            startConnection();
+            String dropDBName = String.format("DROP DATABASE %s", elementDB);
+            statement = connection.createStatement();
+            statement.executeUpdate(dropDBName);
+            System.out.println("dropped database successfully!");
+        }catch (Exception e){
+            System.out.println("drop database failed: " + e.getMessage() + "/" + e.getLocalizedMessage());
+        }
+    }
     public void createDatabase(String dbName) {
         try {
             startConnection();
             String newDBName = String.format("CREATE DATABASE IF NOT EXISTS %s;",dbName);
             statement = connection.createStatement();
             statement.executeUpdate(newDBName);
-            System.out.println("creating database success");
+            System.out.println("creating database successfully!");
 
         } catch (Exception e) {
             System.out.println("create database failed: " + e.getMessage() + "/" + e.getLocalizedMessage());

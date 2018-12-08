@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class CreateDatabase extends javax.servlet.http.HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException, NullPointerException {
@@ -14,9 +15,10 @@ public class CreateDatabase extends javax.servlet.http.HttpServlet {
         Database database = new Database();
         String dbName = request.getParameter("dbName");
         session.setAttribute("dbName",dbName);
-
+        PrintWriter pw = response.getWriter();
         if(database.checkNewDatabase(dbName)){
             System.out.println("It is exist!");
+            url ="createDatabases.jsp";
         }else{
             database.createDatabase(dbName);
             url="showDatabases.jsp";

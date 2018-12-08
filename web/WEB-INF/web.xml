@@ -46,6 +46,15 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>dropDatabase</servlet-name>
+        <servlet-class>data.dropDatabase</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dropDatabase</servlet-name>
+        <url-pattern>/dropDatabase</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>TheMainServlet</servlet-name>
         <servlet-class>controller.TheMainServlet</servlet-class>
     </servlet>
