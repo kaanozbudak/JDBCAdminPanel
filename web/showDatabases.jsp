@@ -19,12 +19,11 @@
 
     #div {
         display: block;
-        width: 30%;
+        width: 20%;
         margin-top: 3%;
         font-family: "Roboto";
         -webkit-appearance: none;
         border: 0;
-        outline: 0;
         transition: 0.1s;
         background: #ffffff;
         color: #808080;
@@ -33,161 +32,101 @@
         right: 0;
         margin-right: auto !important;
         margin-left: auto !important;
-        padding: 2%;
         border-radius: 10px;
-    }
-    #radioValues {
-        margin-left: auto;
-        margin-right: auto;
+        padding-top: 20px;
     }
 
     a {
         text-decoration: none;
         text-align: center;
     }
-    @import('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css')
 
-    .funkyradio div {
-        clear: both;
-        overflow: hidden;
-    }
-
-    .funkyradio label {
-        width: 100%;
-        border-radius: 3px;
-        border: 1px solid #D1D3D4;
-        font-weight: normal;
-    }
-
-    .funkyradio input[type="radio"]:empty,
-    .funkyradio input[type="checkbox"]:empty {
+    .chec-radio label.radio-inline input[type="checkbox"] {
         display: none;
     }
 
-    .funkyradio input[type="radio"]:empty ~ label,
-    .funkyradio input[type="checkbox"]:empty ~ label {
-        position: relative;
-        line-height: 2.5em;
-        text-indent: 3.25em;
-        margin-top: 2em;
+    .chec-radio label.radio-inline input[type="checkbox"]:checked + div {
+        color: #fff;
+        background-color: #000;
+    }
+
+    .chec-radio .radio-inline .clab {
         cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    .funkyradio input[type="radio"]:empty ~ label:before,
-    .funkyradio input[type="checkbox"]:empty ~ label:before {
-        position: absolute;
-        display: block;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        content: '';
-        width: 2.5em;
-        background: #D1D3D4;
-        border-radius: 3px 0 0 3px;
-    }
-
-    .funkyradio input[type="radio"]:hover:not(:checked) ~ label,
-    .funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
-        color: #888;
-    }
-
-    .funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
-    .funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
-        content: '\2714';
-        text-indent: .9em;
-        color: #C2C2C2;
-    }
-
-    .funkyradio input[type="radio"]:checked ~ label,
-    .funkyradio input[type="checkbox"]:checked ~ label {
-        color: #777;
-    }
-
-    .funkyradio input[type="radio"]:checked ~ label:before,
-    .funkyradio input[type="checkbox"]:checked ~ label:before {
-        content: '\2714';
-        text-indent: .9em;
+        background: #e7e7e7;
+        padding: 7px 20px;
+        text-align: center;
+        text-transform: uppercase;
         color: #333;
-        background-color: #ccc;
+        position: relative;
+        height: 34px;
+        float: left;
+        margin: 0;
+        margin-bottom: 5px;
     }
 
-    .funkyradio input[type="radio"]:focus ~ label:before,
-    .funkyradio input[type="checkbox"]:focus ~ label:before {
-        box-shadow: 0 0 0 3px #999;
+    .chec-radio label.radio-inline input[type="checkbox"]:checked + div:before {
+        content: "\e013";
+        margin-right: 5px;
+        font-family: 'Glyphicons Halflings';
     }
 
-    .funkyradio-default input[type="radio"]:checked ~ label:before,
-    .funkyradio-default input[type="checkbox"]:checked ~ label:before {
-        color: #333;
-        background-color: #ccc;
+    .chec-radio label.radio-inline input[type="radio"] {
+        display: none;
     }
 
-    .funkyradio-primary input[type="radio"]:checked ~ label:before,
-    .funkyradio-primary input[type="checkbox"]:checked ~ label:before {
+    .chec-radio label.radio-inline input[type="radio"]:checked + div {
         color: #fff;
-        background-color: #337ab7;
+        background-color: #000;
     }
 
-    .funkyradio-success input[type="radio"]:checked ~ label:before,
-    .funkyradio-success input[type="checkbox"]:checked ~ label:before {
-        color: #fff;
-        background-color: #5cb85c;
+    .chec-radio label.radio-inline input[type="radio"]:checked + div:before {
+        content: "\e013";
+        margin-right: 5px;
+        font-family: 'Glyphicons Halflings';
     }
 
-    .funkyradio-danger input[type="radio"]:checked ~ label:before,
-    .funkyradio-danger input[type="checkbox"]:checked ~ label:before {
-        color: #fff;
-        background-color: #d9534f;
-    }
-
-    .funkyradio-warning input[type="radio"]:checked ~ label:before,
-    .funkyradio-warning input[type="checkbox"]:checked ~ label:before {
-        color: #fff;
-        background-color: #f0ad4e;
-    }
-
-    .funkyradio-info input[type="radio"]:checked ~ label:before,
-    .funkyradio-info input[type="checkbox"]:checked ~ label:before {
-        color: #fff;
-        background-color: #5bc0de;
+    .pro-chx {
+        text-decoration: none;
     }
 
 </style>
 <body>
-<%  String dbName = (String) request.getAttribute("dbName");
+<% String dbName = (String) request.getAttribute("dbName");
     String elementDbName = (String) request.getAttribute("elementDbName");
     ArrayList<String> databases = (ArrayList<String>) session.getAttribute("databases");
     databases.add(dbName);
     databases.remove(elementDbName);%>
-<div id="div">
-    <form action="tables" method="post">
+<div class="form__group">
+    <form id="serverLogin" class="form" action="tables" method="post" style="
+    display: block; width: 400px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;">
         <%for (int i = 0; i < databases.size(); i++) {%>
-        <hr style="border: 1px inset rgba(138,69,85,0.82);">
-        <div class="funkyradio-danger">
-            <input class="values" onchange="buttonVis()" type="radio" name="databases" id="<%= databases.get(i)%>"
-                   value="<%= databases.get(i)%>">
-            <label for=id="<%= databases.get(i)%>"><%= databases.get(i)%></label>
-            <%} %>
 
-        </div>
-        <br>
-        <input class="btn" type="submit" value="Show Tables" id="button1" style="visibility:hidden">
+        <ul class="chec-radio">
+            <label class="radio-inline">
+                <input id="<%= databases.get(i)%>" type="radio" onchange="buttonVis()"
+                       name="databases" class="pro-chx" value="<%= databases.get(i)%>">
+                <div class="clab"><%= databases.get(i)%>
+                </div>
+            </label>
+        </ul>
+
+        <%} %>
+        <input class="btn" type="submit" value="Show Tables" id="button1" disabled>
         <a class="btn" name="createDB" href="createDatabases.jsp" style="">Create Database</a>
-        <input class="btn" type="submit" value="Drop Database" formaction="dropDatabase" name="dropDB" >
+        <input class="btn" type="submit" value="Drop Database" formaction="dropDatabase" name="dropDB">
         <a class="btn" href="index2.jsp"> Back </a>
     </form>
-    <br>
 </div>
 </body>
 
 <script>
 
     function buttonVis() {
-        document.getElementById("button1").style.visibility = "visible";
+        document.getElementById("button1").disabled = false;
     }
 
 </script>
