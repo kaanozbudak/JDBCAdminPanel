@@ -11,10 +11,9 @@ import java.io.PrintWriter;
 public class CreateDatabase extends javax.servlet.http.HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException, NullPointerException {
         String url = "";
-        HttpSession session = request.getSession();
         Database database = new Database();
         String dbName = request.getParameter("dbName");
-        session.setAttribute("dbName",dbName);
+        request.setAttribute("dbName",dbName);
         PrintWriter pw = response.getWriter();
         if(database.checkNewDatabase(dbName)){
             System.out.println("It is exist!");
