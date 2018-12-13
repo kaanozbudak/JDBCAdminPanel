@@ -94,7 +94,7 @@
         </table>
     </div>
     <div class="text-center">
-        <button class="btn btn-dark" type="submit">Update Rows</button>
+        <button id="btnUpdate" class="btn btn-dark" type="submit">Update Rows</button>
         <a class="btn btn-dark" href="showRows.jsp" style="text-decoration: none;"> Back</a>
     </div>
 </form>
@@ -113,8 +113,11 @@
             console.log(document.getElementsByTagName("input")[<%=i%>].value);
         }
         <%}%>
-
-
+        var btnUpdate = document.getElementById("btnUpdate");
+        /*btnUpdate.addEventListener('click',
+            function () {
+                //window.location.reload();
+            });*/
     }
 </script>
 </html>

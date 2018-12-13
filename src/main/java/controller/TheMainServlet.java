@@ -148,11 +148,7 @@ public class TheMainServlet extends HttpServlet {
                 dbc.updateQuerry(databaseName, tableName, columnData.get(i).getName(), updatedData[i], primaryKeyColumnName, primaryKeyValue);
 
             }
-
         }
-
-        System.out.println();
-
-
+        request.getRequestDispatcher("/showRows.jsp").forward(request, response);
     }
 }
