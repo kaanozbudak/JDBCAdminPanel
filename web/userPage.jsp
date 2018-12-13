@@ -7,8 +7,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/userPage.css">
     <script src="js/userpageJs.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/userPage.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/index.js"></script>
 
 </head>
 <body>
@@ -16,12 +18,11 @@
 <!-- Menu Page -->
 <div id="mainMenu" class="user" style="display: block;">
     <header class="user__header">
-        <img width="200px" height="220px" src="img/person.png" alt="" />
+        <img width="220px" height="220px" src="img/person-male.png" alt=""/>
     </header>
-    <form  class="form" >
-        <button id="dbConnection" style="margin-bottom: 1px;"class="btn" formaction="index2.jsp" type="submit">Database Connect</button>
-        <button id="dashBoard" style="margin-bottom: 1px;"class="btn" type="button">DashBoard</button>
-        <button id="userSetting" style="margin-bottom: 1px;"class="btn" type="button">User Settings</button>
+    <form class="form">
+        <button id="dbConnection" class="btn" formaction="index2.jsp" type="submit">Database Connect</button>
+        <button id="userSetting" class="btn" type="button">User Settings</button>
         <button class="btn" formaction="LogoutServlet" type="submit">Logout</button>
     </form>
 </div>
@@ -31,10 +32,12 @@
     <header class="user__header">
     </header>
     <form class="form" style="">
-        <button id="updatePassButton" style="margin-bottom: 1px;"class="btn" formaction="/index2.jsp" type="submit">Update Password</button>
-        <button id="updateInfoButton" style="margin-bottom: 1px;"class="btn" type="button">Update Information</button>
-        <button id="themeButton" style="margin-bottom: 1px;"class="btn" type="button">Background Theme</button>
-        <button id="userSettingBackButton" style="margin-bottom: 1px;"class="btn" type="button">Back</button>
+        <button id="updatePassButton" style="margin-bottom: 1px;" class="btn" formaction="/index2.jsp" type="submit">
+            Update Password
+        </button>
+        <button id="updateInfoButton" style="margin-bottom: 1px;" class="btn" type="button">Update Information</button>
+        <button id="themeButton" style="margin-bottom: 1px;" class="btn" type="button">Background Theme</button>
+        <button id="userSettingBackButton" style="margin-bottom: 1px;" class="btn" type="button">Back</button>
     </form>
 </div>
 
@@ -44,13 +47,14 @@
     </header>
     <form id="registerForm" class="form" action="ResetServlet" method="post">
         <div class="form__group">
-            <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" required />
+            <input type="text" placeholder="Username" name="userName" class="form__input" autocomplete="off" required/>
         </div>
         <div class="form__group">
-            <input type="text" placeholder="Password" name="user_password" class="form__input" autocomplete="off" required />
+            <input type="text" placeholder="Password" name="user_password" class="form__input" autocomplete="off"
+                   required/>
         </div>
         <button class="btn" id="submit" type="submit">Reset Password</button>
-        <button id="resetPassBack" style="margin-bottom: 1px;"class="btn" type="button">Back</button>
+        <button id="resetPassBack" style="margin-bottom: 1px;" class="btn" type="button">Back</button>
     </form>
 </div>
 <!-- Information -->
@@ -59,11 +63,11 @@
     <header class="user__header">
     </header>
     <form class="form" style="">
-        <button id="light" style="margin-bottom: 1px;"class="btn" type="button">Light</button>
-        <button id="dark" style="margin-bottom: 1px;"class="btn" type="button">Dark</button>
-        <button id="themeBackButton" style="margin-bottom: 1px;"class="btn" type="button">Back</button>
+        <button id="light" style="margin-bottom: 1px;" class="btn" type="button">Light</button>
+        <button id="dark" style="margin-bottom: 1px;" class="btn" type="button">Dark</button>
+        <button id="themeBackButton" style="margin-bottom: 1px;" class="btn" type="button">Back</button>
     </form>
-    </div>
+</div>
 
 </div>
 </body>
