@@ -31,7 +31,7 @@
     ArrayList<ColumnData> columns = (ArrayList<ColumnData>) session.getAttribute("columnData");
     ArrayList<RowData> rows = (ArrayList<RowData>) session.getAttribute("rowData");
 %>
-<form action="editRowServlet">
+<form action="editRow" method="post">
     <table class="table table-striped table-dark">
         <thead>
         <tr>
@@ -57,7 +57,7 @@
         <tbody>
             <%for (int i = 0; i < rows.size(); i++) {%>
         <tr>
-            <th scope="row"><input type="radio" name="radioButtons" value="<%=rows.get(i).getCol()[0]%>"></th>
+            <th scope="row"><input type="radio" name="rows" value="<%=rows.get(i).getCol()[0]%>"></th>
             <%for (int j = 0; j < columns.size(); j++) {%>
             <th><%=rows.get(i).getCol()[j] %>
             </th>

@@ -74,6 +74,14 @@
         <servlet-name>TheMainServlet</servlet-name>
         <url-pattern>/rows</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/updateRow</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/editRow</url-pattern>
+    </servlet-mapping>
 
     <listener>
         <listener-class>listener.CountListener</listener-class>

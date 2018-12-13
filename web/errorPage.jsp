@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="css/errorPage.css" />
+    <link type="text/css" rel="stylesheet" href="css/errorPage.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,15 +30,15 @@
 
 </head>
 <body>
-    <div id="notfound">
-        <div class="notfound">
-            <div class="notfound-404">
-                <h1>Oops!</h1>
-            </div>
-            <h2>Something Wrong !</h2>
-            <p>The user which you are looking for might have been removed or you never been registered.</p>
-            <a href="index.jsp">Please Try again</a>
+<div id="notfound">
+    <div class="notfound">
+        <div class="notfound-404">
+            <h1>Oops!</h1>
         </div>
+        <h2>Something Wrong !</h2>
+        <p>The user which you are looking for might have been removed or you never been registered.</p>
+        <a href="index.jsp">Please Try again</a>
     </div>
+</div>
 </body>
 </html>
