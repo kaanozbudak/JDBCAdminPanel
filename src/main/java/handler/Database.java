@@ -48,6 +48,15 @@ public class Database {
         }
         close();
     }
+    public void createTable(String tableName, String colName,String selection,int lenghtOfValues,  int numOfCol){
+        try{
+            startConnection();
+            String formatOfTable = String.format("create table %s(" +
+                    "%s %d(&d)");
+        }catch (Exception e){
+            System.out.println("create table failed " + e.getMessage() + " / " + e.getLocalizedMessage());
+        }
+    }
     public void dropDatabase(String elementDB){
         try{
             startConnection();
