@@ -149,6 +149,19 @@ public class TheMainServlet extends HttpServlet {
 
             }
         }
+        int selectedRowIndex = (Integer)session.getAttribute("selectedRowIndex");
+        rs = dbc.executeQuerry("select * from " + databaseName +"." + tableName + " where "+
+                primaryKeyColumnName + " = " + rowData.get(selectedRowIndex).getCol()[(Integer)session.getAttribute("primaryKeyIndex")]);
+
+        try {
+            while(rs.next()) {
+                for(int i=0;i<columnData.size();i++) {
+                    rowData.get(selectedRowIndex).setCol(rs.getString(columnData.get(i).getName()), i);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Have a problem updating rowData after updating  a row :" + e.getLocalizedMessage());
+        }
         request.getRequestDispatcher("/showRows.jsp").forward(request, response);
     }
 }

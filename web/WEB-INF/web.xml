@@ -19,6 +19,24 @@
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>createTable</servlet-name>
+        <servlet-class>data.createTable</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createTable</servlet-name>
+        <url-pattern>/tableNameandCol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>createTable</servlet-name>
+        <url-pattern>/filltheTable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>createTable</servlet-name>
+        <url-pattern>/createTable</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>servlets.LogoutServlet</servlet-class>
