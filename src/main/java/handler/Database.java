@@ -59,17 +59,6 @@ public class Database {
             System.out.println("drop database failed: " + e.getMessage() + "/" + e.getLocalizedMessage());
         }
     }
-    }public void createTable(String tableName, String colName, String type){
-        try{
-            startConnection();
-            String createTable = String.format("create table %s(%s %s %s);",tableName,colName,type);
-            statement = connection.createStatement();
-            statement.executeUpdate(createTable);
-            System.out.println("success table created.");
-        }catch (Exception e){
-            System.out.println("create table failed: " + e.getMessage() + " : " + e.getLocalizedMessage());
-        }
-    }
     public void createDatabase(String dbName) {
         try {
             startConnection();
@@ -98,7 +87,18 @@ public class Database {
         close();
         return false;
     }
+    public void createTable(String colName, String type, String pk){
+        try{
+            startConnection();
+            String tableFormat = String.format("CREATE TABLE %s(%s %s %s);");
+            statement = connection.createStatement();
+            statement.executeUpdate(tableFormat);
 
+            System.out.println("creta table successfully!");
+        }catch (Exception e){
+            System.out.println("create table failed : " + e.getMessage() + " : " + e.getLocalizedMessage());
+        }
+    }
     public boolean checkUser(String userName) {
         try {
             startConnection();

@@ -88,17 +88,21 @@
     }
 </style>
 <body style="background: #212529;">
-<form action="filltheTable" method="post">
+<form action="fillTables" method="post">
     <div class="container">
+        <%
+            String loop = (String) session.getAttribute("loop");
+            int intloop = Integer.parseInt(loop);
+            for(int i=0;i<intloop;i++){
+
+        %>
         <table class="table table-striped table-dark">
             <thead>
 
             <td>
-            <th class="cols">Table Name</th>
-            <th class="cols">Col Name</th>
-            <th class="cols">Type</th>
-            <th class="cols">P-Key</th>
-
+            <th class="cols">Col Name<%=i%>%></th>
+            <th class="cols">Type<%=i%></th>
+            <th class="cols">P-Key<%=i%></th>
             </td>
 
             <td>
@@ -107,23 +111,19 @@
             <tr>
                 <td>
                 <th>
-                    <input class="invalues" type="text" name="tableName">
+                    <input class="inValues" type="text" name="colName<%=i%>" placeholder="Enter Column Name">
                 </th>
                 <th>
-                    <input class="inValues" type="text" name="colName" placeholder="Enter Column Name">
-                </th>
-                <th>
-                    <select name="type" class="browser-default custom-select inValues" required>
-                        <option selected>Select Type
-                        </option>
-                        <option value="1">int</option>
-                        <option value="2">varchar</option>
-                        <option value="3">text</option>
+                    <select name="type<%=i%>" class="browser-default custom-select inValues" required>
+                        <option selected>Select Type</option>
+                        <option value="int">int</option>
+                        <option value="varchar">varchar</option>
+                        <option value="text">text</option>
                     </select>
                 </th>
                 <th>
                     <div class="switch_box box_1">
-                        <input name="pk" type="checkbox" value="PRIMARY KEY" class="switch_1">
+                        <input name="pk<%=i%>" type="checkbox" value="PRIMARY KEY" class="switch_1">
                     </div>
                 </th>
                 </td>
@@ -132,6 +132,7 @@
             </tr>
             </thead>
         </table>
+        <% }%>
     </div>
     <div class="text-center">
         <button id="btnUpdate" class="btn btn-dark" type="submit">Create Table</button>

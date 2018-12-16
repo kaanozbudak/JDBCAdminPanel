@@ -21,20 +21,16 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>createTable</servlet-name>
-        <servlet-class>data.createTable</servlet-class>
+        <servlet-name>crtTable</servlet-name>
+        <servlet-class>data.crtTable</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>createTable</servlet-name>
-        <url-pattern>/tableNameandCol</url-pattern>
+        <servlet-name>crtTable</servlet-name>
+        <url-pattern>/crtTable</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>createTable</servlet-name>
-        <url-pattern>/filltheTable</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>createTable</servlet-name>
-        <url-pattern>/createTable</url-pattern>
+        <servlet-name>crtTable</servlet-name>
+        <url-pattern>/fillTables</url-pattern>
     </servlet-mapping>
 
     <servlet>
