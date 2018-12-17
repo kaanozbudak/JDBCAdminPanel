@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <%@page import="java.util.ArrayList" %>
@@ -95,11 +96,13 @@
 
 </style>
 <body>
-<% String dbName = (String) request.getAttribute("dbName");
+<%
+    String dbName = (String) request.getAttribute("dbName");
     String elementDbName = (String) request.getAttribute("elementDbName");
     ArrayList<String> databases = (ArrayList<String>) session.getAttribute("databases");
     databases.add(dbName);
-    databases.remove(elementDbName);%>
+    databases.remove(elementDbName);
+%>
 <div class="form__group">
     <form id="serverLogin" class="form" action="tables" method="post" style="
     display: block; width: 400px;
@@ -107,18 +110,28 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;">
-        <%for (int i = 0; i < databases.size(); i++) {%>
+        <%--<%for (int i = 0; i < databases.size(); i++) {%>--%>
 
-        <ul class="chec-radio">
-            <label class="radio-inline">
-                <input id="<%= databases.get(i)%>" type="radio" onchange="buttonVis()"
-                       name="databases" class="pro-chx" value="<%= databases.get(i)%>">
-                <div class="clab"><%= databases.get(i)%>
-                </div>
-            </label>
-        </ul>
+        <%--<ul class="chec-radio">--%>
+            <%--<label class="radio-inline">--%>
+                <%--<input id="<%= databases.get(i)%>" type="radio" onchange="buttonVis()"--%>
+                       <%--name="databases" class="pro-chx" value="<%= databases.get(i)%>">--%>
+                <%--<div class="clab"><%= databases.get(i)%>--%>
+                <%--</div>--%>
+            <%--</label>--%>
+        <%--</ul>--%>
+        <%--<%} %>--%>
 
-        <%} %>
+        <c:forEach var="i" begin="0" end="${databases.size()-1}">
+            <ul class="chec-radio">
+                <label class="radio-inline">
+                    <input id="${databases.get(i)}" type="radio" onchange="buttonVis()"
+                        name="databases" class="pro-chx" value="${databases.get(i)}">
+                    <div class="clab"><c:out value="${databases.get(i)}"></c:out></div>
+                </label>
+            </ul>
+        </c:forEach>
+
         <input class="btn" type="submit" value="Show Tables" id="button1" disabled>
         <a id="button2" class="btn" name="createDB" href="createDatabases.jsp" style="">Create Database</a>
         <input class="btn" type="submit" value="Drop Database" formaction="dropDatabase" name="dropDB">

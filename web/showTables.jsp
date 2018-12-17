@@ -102,7 +102,6 @@
     margin-right: auto;">
 
         <%for (int i = 0; i < tables.size(); i++) { %>
-
         <ul class="chec-radio">
             <label class="radio-inline">
                 <input id="<%= tables.get(i)%>" type="radio" onchange="buttonVis()"
@@ -111,8 +110,6 @@
                 </div>
             </label>
         </ul>
-
-
         <%} %>
         <input class="btn" type="submit" value="Show Rows" id="button1" disabled>
         <a class="btn" name="createTable" href="createTable.jsp" style="">Create a Table</a>
