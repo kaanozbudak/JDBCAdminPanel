@@ -100,7 +100,7 @@
             <thead>
 
             <td>
-            <th class="cols">Col Name<%=i%>%></th>
+            <th class="cols">Col Name<%=i%></th>
             <th class="cols">Type<%=i%></th>
             <th class="cols">P-Key<%=i%></th>
             </td>

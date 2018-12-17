@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import data.ColumnData;
 import data.DBConn;
 import data.RowData;
+import handler.Values;
 
 public class TheMainServlet extends HttpServlet {
     private DBConn dbc;
@@ -34,20 +35,29 @@ public class TheMainServlet extends HttpServlet {
         if(uri.endsWith("databases")) {
             databases(request, response);
         }
-        else if(uri.endsWith("tables")) {
+        else if(uri.endsWith("tables")) { //heads to the jsp which shows tables
             tables(request, response);
         }
-        else if(uri.endsWith("rows")) {
+        else if(uri.endsWith("rows")) {	//heads to the jsp which shows rows
             rows(request, response);
         }
-        else if(uri.endsWith("editRow")) {
+        else if(uri.endsWith("editRow")) { //Edit a row
             editRow(request, response);
         }
-        else if(uri.endsWith("updateRow")) {
+        else if(uri.endsWith("updateRow")) { //edit row button -- sql
             updateRow(request, response);
         }
-
-
+        else if(uri.endsWith("createRow")) { //heads to the createRow.jsp which generates a new row
+            createRow(request, response);
+        }
+        else if(uri.endsWith("createRowButton")) { //createRow -- sql
+            createRowButton(request, response);
+        }else if(uri.endsWith("crtTable")) { //heads to the createRow.jsp which generates a new row
+            crtTable(request, response);
+        }
+        else if(uri.endsWith("fillTables")) { //createRow -- sql
+            fillTables(request, response);
+        }
     }
     private void databases(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         dbc = new DBConn();
@@ -129,9 +139,7 @@ public class TheMainServlet extends HttpServlet {
     }
     private void editRow(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String checkedRow = request.getParameter("rows");
-
         session.setAttribute("checkedRow", checkedRow);
-        System.out.println(checkedRow);
         request.getRequestDispatcher("/edit_create_Row.jsp").forward(request, response);
 
     }
@@ -146,9 +154,9 @@ public class TheMainServlet extends HttpServlet {
             updatedData[i]= request.getParameter(columnData.get(i).getName());
             if(!rowData.get((Integer)session.getAttribute("selectedRowIndex")).getCol()[i].equals(updatedData[i])) {
                 dbc.updateQuerry(databaseName, tableName, columnData.get(i).getName(), updatedData[i], primaryKeyColumnName, primaryKeyValue);
-
             }
         }
+
         int selectedRowIndex = (Integer)session.getAttribute("selectedRowIndex");
         rs = dbc.executeQuerry("select * from " + databaseName +"." + tableName + " where "+
                 primaryKeyColumnName + " = " + rowData.get(selectedRowIndex).getCol()[(Integer)session.getAttribute("primaryKeyIndex")]);
@@ -163,5 +171,60 @@ public class TheMainServlet extends HttpServlet {
             System.out.println("Have a problem updating rowData after updating  a row :" + e.getLocalizedMessage());
         }
         request.getRequestDispatcher("/showRows.jsp").forward(request, response);
+
+    }
+    private void createRow(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        request.getRequestDispatcher("/createRow.jsp").forward(request, response);
+    }
+    private void createRowButton(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        String databaseName = (String) session.getAttribute("checkedDB");
+        String tableName = (String) session.getAttribute("checkedTable");
+        String values[] = new String[columnData.size()];
+        for(int i=0;i<values.length;i++) {
+            values[i] = request.getParameter(columnData.get(i).getName());
+        }
+        dbc.insertIntoTable(databaseName, tableName, values, this.rowData);
+        request.getRequestDispatcher("/showRows.jsp").forward(request, response);
+
+    }
+    public void fillTables(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+        String databaseName = (String) session.getAttribute("checkedDB");
+        String newTableName = (String) session.getAttribute("newTableName");
+        String loop = (String) session.getAttribute("loop");
+        int intloop = Integer.parseInt(loop);
+        Values val = new Values();
+        ArrayList<Values> values = new ArrayList<Values>();
+
+        for (int i = 0; i < intloop; i++) {
+            String colName = request.getParameter("colName" + i);
+            String type = request.getParameter("type" + i);
+            String pk = request.getParameter("pk" + i);
+
+            session.setAttribute("colName" + i, colName);
+            session.setAttribute("type" + i, type);
+            session.setAttribute("pk" + i, pk);
+
+            values.add(new Values(colName, type, pk));
+        }
+        dbc.createNewTable(databaseName, newTableName, values, tables);
+
+        request.getRequestDispatcher("showTables.jsp").forward(request,response);
+
+        for (int j = 0; j < intloop; j++) {
+            String colName = values.get(j).getColName();
+            System.out.println(values.get(j).getColName());
+            System.out.println(values.get(j).getType());
+            System.out.println(values.get(j).getPk());
+        }
+    }
+
+    public void crtTable(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+        String newTableName = request.getParameter("tableName");
+        String loop = request.getParameter("numberOfCol");
+        session.setAttribute("newTableName",newTableName);
+        session.setAttribute("loop", loop);
+        System.out.println(session.getAttribute("loop"));
+
+        request.getRequestDispatcher("fillTable.jsp").forward(request, response);
     }
 }

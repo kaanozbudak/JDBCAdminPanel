@@ -77,6 +77,7 @@
     <div class="text-center">
 
         <button class="btn btn-dark" type="submit">Edit the chosen one</button>
+        <button class="btn btn-dark" formaction="createRow" type="submit">Create A Row</button>
         <input class="btn btn-dark" type="button" onclick="window.location.reload();" value="Reflesh">
         <input class="btn btn-dark" type="button" onclick="location.href='showTables.jsp';" value="Back">
     </div>

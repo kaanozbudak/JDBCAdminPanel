@@ -88,6 +88,8 @@ public class Database {
         return false;
     }
     public void createTable(String colName, String type, String pk){
+
+
         try{
             startConnection();
             String tableFormat = String.format("CREATE TABLE %s(%s %s %s);");

@@ -20,18 +20,6 @@
         <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>crtTable</servlet-name>
-        <servlet-class>data.crtTable</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>crtTable</servlet-name>
-        <url-pattern>/crtTable</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>crtTable</servlet-name>
-        <url-pattern>/fillTables</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
@@ -74,6 +62,22 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/crtTable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/createRow</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/createRowButton</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/fillTables</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
         <url-pattern>/TheMainServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -100,6 +104,7 @@
     <listener>
         <listener-class>listener.CountListener</listener-class>
     </listener>
+
     <filter>
         <filter-name>ResponseTime</filter-name>
         <filter-class>filters.ResponseTime</filter-class>
