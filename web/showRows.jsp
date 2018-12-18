@@ -46,7 +46,7 @@
                 <th></th>
                 <%for (int i = 0; i < columns.size(); i++) {%>
                 <th>
-                    <input placeholder="filter" type="text" class="inputs">
+                    <input id="<%=i%>" placeholder="filter" type="text" class="inputs">
                 </th>
                 <%} %>
             </tr>
