@@ -101,6 +101,16 @@
         <url-pattern>/editRow</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/dropTableButton</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/deleteRowButton</url-pattern>
+    </servlet-mapping>
+
     <listener>
         <listener-class>listener.CountListener</listener-class>
     </listener>

@@ -126,6 +126,38 @@ public class DBConn {
         }
 
     }
+    public void dropTable(String databaseName, String tableName, ArrayList<String> tables) {
+        String qry = "drop table " + databaseName + "." + tableName;
+        try {
+            ps = con.prepareStatement(qry);
+            ps.executeUpdate();
+            for(int i=0;i<tables.size();i++) {
+                if(tables.get(i).equals(tableName)) {
+                    tables.remove(i);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Have a problem while dropping table " + tableName + " : " + e.getLocalizedMessage());
+        }
+    }
+    public void deleteRow(String databaseName, String tableName, int primaryKeyIndex ,int selectedRowIndex, ArrayList<ColumnData> columnData, ArrayList<RowData> rowData) {
+        String primaryKeyColName = columnData.get(primaryKeyIndex).getName();
+        String primaryKeyRowVal = rowData.get(selectedRowIndex).getCol()[primaryKeyIndex];
+        String qry = "delete from " +databaseName +"." + tableName + " where " + primaryKeyColName + " = " + primaryKeyRowVal +";";
+        System.out.println(qry);
+        try {
+            ps = con.prepareStatement(qry);
+            ps.executeUpdate();
+            for(int i=0;i<rowData.size();i++) {
+                if(rowData.get(i).getCol()[primaryKeyIndex] == primaryKeyRowVal) {
+                    rowData.remove(i);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Have a problem while deleting the row: " +  e.getLocalizedMessage());
+        }
+    }
+
 
 
 }

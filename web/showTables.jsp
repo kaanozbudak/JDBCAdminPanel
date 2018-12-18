@@ -113,7 +113,7 @@
         <%} %>
         <input class="btn" type="submit" value="Show Rows" id="button1" disabled>
         <a class="btn" name="createTable" href="createTable.jsp" style="">Create a Table</a>
-        <input class="btn" type="submit" value="Drop Table" formaction="" name="">
+        <input class="btn" type="submit" value="Drop Table" formaction="dropTableButton" name="">
         <a class="btn" href="showDatabases.jsp"> Back </a>
     </form>
 </div>

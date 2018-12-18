@@ -77,6 +77,7 @@
     <div class="text-center">
 
         <button class="btn btn-dark" type="submit">Edit the chosen one</button>
+        <button class="btn btn-dark" formaction="deleteRowButton" type="submit">Delete the chosen one</button>
         <button class="btn btn-dark" formaction="createRow" type="submit">Create A Row</button>
         <input class="btn btn-dark" type="button" onclick="window.location.reload();" value="Reflesh">
         <input class="btn btn-dark" type="button" onclick="location.href='showTables.jsp';" value="Back">
@@ -85,28 +86,21 @@
 </form>
 </body>
 <script>
-    window.onload = function () {
+    window.onload = function(){
         var table = document.getElementsByTagName("table")[0];
         <%for(int i=0;i<columns.size();i++){%>
-        document.getElementsByClassName("inputs")[<%=i%>].addEventListener("input", function () {
+        document.getElementsByClassName("inputs")[<%=i%>].addEventListener("input", function(){
             var regex = new RegExp(this.value);
-            for (var j = 2; j < <%=rows.size()%> +2; j++) {
-                if (!regex.test(table.rows[j].cells[<%=i%>].innerHTML)) {
-                    table.rows[j].style.display = "none";
-                    table.rows[0].style.display = "show";
-                    table.rows[1].style.display = "show";
-
+            for(var j=2;j<<%=rows.size()%> + 2;j++){
+                if(!regex.test(table.rows[j].cells[parseInt(this.id)+1].innerHTML)){
+                    table.rows[j].style.visibility = "hidden";
                 }
-                else {
-                    table.rows[j].style.display = "show";
-                    table.rows[0].style.display = "show";
-                    table.rows[1].style.display = "show";
+                else{
+                    table.rows[j].style.visibility = "visible";
                 }
             }
-
         });
         <%}%>
-
     };
 </script>
 </html>

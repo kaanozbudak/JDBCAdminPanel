@@ -58,6 +58,12 @@ public class TheMainServlet extends HttpServlet {
         else if(uri.endsWith("fillTables")) { //createRow -- sql
             fillTables(request, response);
         }
+        else if(uri.endsWith("dropTableButton")) {
+            dropTableButton(request, response);
+        }
+        else if(uri.endsWith("deleteRowButton")) {
+            deleteRowButton(request, response);
+        }
     }
     private void databases(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         dbc = new DBConn();
@@ -226,5 +232,34 @@ public class TheMainServlet extends HttpServlet {
         System.out.println(session.getAttribute("loop"));
 
         request.getRequestDispatcher("fillTable.jsp").forward(request, response);
+    }
+    private void dropTableButton(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        String databaseName = (String) session.getAttribute("checkedDB");
+        String tableName = request.getParameter("tables");
+
+
+        dbc.dropTable(databaseName, tableName, tables);
+        request.getRequestDispatcher("/showTables.jsp").forward(request, response);
+    }
+    private void deleteRowButton(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        String databaseName = (String) session.getAttribute("checkedDB");
+        String tableName = (String) session.getAttribute("checkedTable");
+        int primaryKeyIndex;
+        if(session.getAttribute("primaryKeyIndex") == null){
+            primaryKeyIndex = 0;
+        }
+        else {
+            primaryKeyIndex = (Integer) session.getAttribute("primaryKeyIndex");
+        }
+        int selectedRowIndex = 0;
+        int j;
+        for(j=0;j<rowData.size();j++){
+            if(rowData.get(j).getCol()[primaryKeyIndex].equals(request.getParameter("rows"))){
+                selectedRowIndex = j;
+                break;
+            }
+        }
+        dbc.deleteRow(databaseName, tableName, primaryKeyIndex, selectedRowIndex, columnData, rowData);
+        request.getRequestDispatcher("/showRows.jsp").forward(request, response);;
     }
 }
