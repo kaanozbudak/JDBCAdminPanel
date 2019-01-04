@@ -23,32 +23,28 @@ body {
     max-width: 340px;
     margin: 10vh auto;
 }
-
 .user__header {
     text-align: center;
     opacity: 0;
     -webkit-transform: translate3d(0, 500px, 0);
     transform: translate3d(0, 500px, 0);
-    -webkit-animation: arrive 500ms ease-in-out 0.7s forwards;
-    animation: arrive 500ms ease-in-out 0.7s forwards;
+    -webkit-animation: arrive 500ms ease-in-out 0.1s forwards;
+    animation: arrive 500ms ease-in-out 0.1s forwards;
 }
-
 .user__title {
     font-size: 14px;
     margin-bottom: -10px;
     font-weight: 500;
     color: white;
 }
-
 .form {
     margin-top: 40px;
-    border-radius: 6px;
     overflow: hidden;
     opacity: 0;
     -webkit-transform: translate3d(0, 500px, 0);
     transform: translate3d(0, 500px, 0);
-    -webkit-animation: arrive 500ms ease-in-out 0.9s forwards;
-    animation: arrive 500ms ease-in-out 0.9s forwards;
+    -webkit-animation: arrive 500ms ease-in-out 0.1s forwards;
+    animation: arrive 500ms ease-in-out 0.1s forwards;
 }
 
 .form--no {
@@ -57,24 +53,6 @@ body {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-}
-#errorh1{
-    color:white;
-    font-family: "Roboto";
-    font-size:40px;
-    padding:30px;
-    text-shadow: 0 1px 0 #ccc,
-    0 2px 0 #c9c9c9,
-    0 3px 0 #bbb,
-    0 4px 0 #b9b9b9,
-    0 5px 0 #aaa,
-    0 6px 1px rgba(0,0,0,.1),
-    0 0 5px rgba(0,0,0,.1),
-    0 1px 3px rgba(0,0,0,.3),
-    0 3px 5px rgba(0,0,0,.2),
-    0 5px 10px rgba(0,0,0,.25),
-    0 10px 10px rgba(0,0,0,.2),
-    0 20px 20px rgba(0,0,0,.15);
 }
 .form__input {
     display: block;
@@ -102,11 +80,11 @@ body {
     border: 0;
     color: #808080;
     background: #ffffff;
-    transition: 0.3s;
+    transition: 0.1s;
     font-size: 18px;
 }
 .btn:hover {
-    background: silver;
+    background: goldenrod;
 }
 @-webkit-keyframes NO {
     from, to {

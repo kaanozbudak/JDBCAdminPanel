@@ -7,8 +7,123 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>servlets.LoginServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>servlets.RegisterServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>servlets.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ResetServlet</servlet-name>
+        <servlet-class>servlets.ResetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResetServlet</servlet-name>
+        <url-pattern>/ResetServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateDatabase</servlet-name>
+        <servlet-class>data.CreateDatabase</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateDatabase</servlet-name>
+        <url-pattern>/createDatabase</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>dropDatabase</servlet-name>
+        <servlet-class>data.dropDatabase</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dropDatabase</servlet-name>
+        <url-pattern>/dropDatabase</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TheMainServlet</servlet-name>
+        <servlet-class>controller.TheMainServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/crtTable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/createRow</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/createRowButton</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/fillTables</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/TheMainServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/databases</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/tables</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/rows</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/updateRow</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/editRow</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/dropTableButton</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TheMainServlet</servlet-name>
+        <url-pattern>/deleteRowButton</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>listener.CountListener</listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>ResponseTime</filter-name>
+        <filter-class>filters.ResponseTime</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ResponseTime</filter-name>
+        <url-pattern>/LoginServlet</url-pattern>
+        <url-pattern>/RegisterServlet</url-pattern>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </filter-mapping>
+
 </web-app>
