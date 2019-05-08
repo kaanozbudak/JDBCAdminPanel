@@ -260,6 +260,6 @@ public class TheMainServlet extends HttpServlet {
             }
         }
         dbc.deleteRow(databaseName, tableName, primaryKeyIndex, selectedRowIndex, columnData, rowData);
-        request.getRequestDispatcher("/showRows.jsp").forward(request, response);;
+        request.getRequestDispatcher("/showRows.jsp").forward(request, response);
     }
 }
